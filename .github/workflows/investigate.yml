@@ -49,12 +49,8 @@ jobs:
         tag_push: '--force'
 
     - name: Create Pull Request
-      uses: peter-evans/create-pull-request@v5
-      with:
-        branch: test_branch
-        base: vNext
-        title: "Updates for the new release"
-        body: "Updates for the new release"
-        reviewers: mbroz2,leochr
+      run: gh pr create -B test_branch -H actions-investigate --title 'Updates for the new release' --body 'Created by Github Actions'
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - run: echo "🍏 This job's status is ${{ job.status }}."

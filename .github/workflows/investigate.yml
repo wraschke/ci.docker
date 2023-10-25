@@ -39,6 +39,9 @@ jobs:
     - run: echo "List files in new directory that was just created"
     - run: ls -l ${{ github.workspace }}/ga/investigateActions
 
+    - name: Run update.sh script
+      run: sh ./update.sh
+
     #- name: Let's append to the README file.
     #  run: echo $(date) >> README.md
 

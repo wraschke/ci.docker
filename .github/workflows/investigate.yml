@@ -20,27 +20,11 @@ jobs:
     - name: Show useful information about the environment
       run: |
         echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-        echo
-        echo "List files"
-        ls -a
-        echo
-        echo "Java version"
-        java --version
-        echo
-        echo "Workspace location"
-        echo $RUNNER_WORKSPACE
-        echo
-        echo "Who is running this?"
-        whoami
-        echo
-        echo "Disc layout"
-        df
-        echo
-        echo "What are the environment variables?"
-        env
 
     - name: Check out repository code
       uses: actions/checkout@v4
+      with:
+        ref: vNext
 
     - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
     - run: echo "🖥️ The workflow is now ready to test your code on the runner."
@@ -50,8 +34,11 @@ jobs:
         ls ${{ github.workspace }}
         ls ${{ github.workspace }}/ga
 
-    - name: Let's append to the README file.
-      run: echo $(date) >> README.md
+    - run: echo "Copying latest files to a dummy directory"
+    - run: cp -r ${{ github.workspace }}/ga/latest ${{ github.workspace }}/ga/test
+
+    #- name: Let's append to the README file.
+    #  run: echo $(date) >> README.md
 
     - name: Commit changes
       uses: EndBug/add-and-commit@v9

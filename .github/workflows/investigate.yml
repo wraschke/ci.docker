@@ -35,9 +35,9 @@ jobs:
         ls ${{ github.workspace }}/ga
 
     - run: echo "Copying latest files to a dummy directory"
-    - run: cp -r ${{ github.workspace }}/ga/latest ${{ github.workspace }}/ga/test
-    - run: echo "List files in ga again"
-    - run: ls ${{ github.workspace }}/ga
+    - run: cp -r ${{ github.workspace }}/ga/latest ${{ github.workspace }}/ga/investigateActions
+    - run: echo "List files in new directory that was just created"
+    - run: ls ${{ github.workspace }}/ga/investigateActions
 
     #- name: Let's append to the README file.
     #  run: echo $(date) >> README.md

@@ -35,16 +35,13 @@ jobs:
         ls ${{ github.workspace }}
         ls ${{ github.workspace }}/ga
 
-    - run: echo "Copying latest files to a dummy directory"
-    - run: cp -r ${{ github.workspace }}/ga/latest ${{ github.workspace }}/ga/investigateActions
-    - run: echo "List files in new directory that was just created"
-    - run: ls -l ${{ github.workspace }}/ga/investigateActions
+    #- run: echo "Copying latest files to a dummy directory"
+    #- run: cp -r ${{ github.workspace }}/ga/latest ${{ github.workspace }}/ga/investigateActions
+    #- run: echo "List files in new directory that was just created"
+    #- run: ls -l ${{ github.workspace }}/ga/investigateActions
 
     - name: Run update.sh script
       run: sh ./update.sh
-
-    #- name: Let's append to the README file.
-    #  run: echo $(date) >> README.md
 
     - name: Commit changes
       uses: EndBug/add-and-commit@v9
@@ -53,7 +50,7 @@ jobs:
         author_name: GitHub Actions
         author_email: mail@example.com
         message: 'Test commit'
-        add: '${{ github.workspace }}/ga/investigateActions'
+        add: '${{ github.workspace }}/ga/*'
         new_branch: test_branch
         push: true
 

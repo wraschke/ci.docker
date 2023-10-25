@@ -52,6 +52,7 @@ jobs:
       uses: peter-evans/create-pull-request@v5
       with:
         branch: test_branch
+        base: vNext
         title: "Updates for the new release"
         body: "Updates for the new release"
         reviewers: mbroz2,leochr

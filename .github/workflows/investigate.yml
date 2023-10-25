@@ -48,6 +48,10 @@ jobs:
     - name: List files in the repository
       run: |
         ls ${{ github.workspace }}
+        ls ${{ github.workspace }}/ga
+
+    - name: Let's append to the README file.
+      run: echo $(date) >> README.md
 
     - name: Commit changes
       uses: EndBug/add-and-commit@v9

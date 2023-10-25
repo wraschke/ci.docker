@@ -49,3 +49,4 @@ jobs:
         message: 'Test commit'
         add: 'README.md'
         new_branch: test_branch
+        push: true

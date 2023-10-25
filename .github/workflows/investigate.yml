@@ -48,4 +48,12 @@ jobs:
         push: true
         tag_push: '--force'
 
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v5
+      with:
+        branch: test_branch
+        title: "Updates for the new release"
+        body: "Updates for the new release"
+        reviewers: mbroz2,leochr
+
     - run: echo "🍏 This job's status is ${{ job.status }}."

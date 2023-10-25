@@ -37,7 +37,7 @@ jobs:
     - run: echo "Copying latest files to a dummy directory"
     - run: cp -r ${{ github.workspace }}/ga/latest ${{ github.workspace }}/ga/investigateActions
     - run: echo "List files in new directory that was just created"
-    - run: ls ${{ github.workspace }}/ga/investigateActions
+    - run: ls -l ${{ github.workspace }}/ga/investigateActions
 
     #- name: Let's append to the README file.
     #  run: echo $(date) >> README.md
@@ -49,7 +49,7 @@ jobs:
         author_name: GitHub Actions
         author_email: mail@example.com
         message: 'Test commit'
-        add: '${{ github.workspace }}/ga/test'
+        add: '${{ github.workspace }}/ga/investigateActions'
         new_branch: test_branch
         push: true
 

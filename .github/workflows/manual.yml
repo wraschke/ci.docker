@@ -32,6 +32,7 @@ jobs:
       run: echo "Hello ${{ inputs.name }}"
     - name: Print repo information
       run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+    - name: Listing repo's files
       run: |
         ls ${{ github.workspace }}
     - name: Check out repository code

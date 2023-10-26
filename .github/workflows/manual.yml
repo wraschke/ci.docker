@@ -10,12 +10,22 @@ on:
     inputs:
       name:
         # Friendly description to be shown in the UI instead of 'name'
-        description: 'Person to greet'
+        description: 'Enter name'
         # Default value if no value is explicitly provided
         default: 'Wendy'
         # Input has to be provided for the workflow to run
         required: false
         # The data type of the input
+        type: string
+      color:
+        description: 'Favorite color?'
+        default: 'Green'
+        required: false
+        type: string
+      hobby:
+        description: 'Hobbies?'
+        default: 'Coding'
+        required: false
         type: string
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -27,6 +37,12 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+    - name: Greetings
+      run: |
+        echo "Hello, ${{ inputs.name }}""
+        echo "I like ${{ inputs.color }}, too."
+        echo "${{ inputs.hobby }} is fun!"
+      
     - name: Show useful information about the environment
       run: |
         echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."

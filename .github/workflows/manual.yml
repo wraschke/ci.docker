@@ -42,7 +42,7 @@ jobs:
         echo "Hello, ${{ inputs.name }}""
         echo "I like ${{ inputs.color }}, too."
         echo "${{ inputs.hobby }} is fun!"
-      
+
     - name: Show useful information about the environment
       run: |
         echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."

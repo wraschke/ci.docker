@@ -6,7 +6,10 @@ name: Investigative workflow
 # or API.
 on:
   push:
-    branches: [actions-investigate]
+    branches:
+      - vNext
+    paths:
+      - 'vNext.properties'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:

@@ -1,6 +1,6 @@
 # This workflow is triggered by manual inputs.
 
-name: In TEST branch: Update files for the new release
+name: TEST branch
 
 on:
   workflow_dispatch:

@@ -1,6 +1,6 @@
 # This workflow is triggered by manual inputs.
 
-name: Update files for the new release
+name: In TEST branch: Update files for the new release
 
 on:
   workflow_dispatch:
@@ -37,7 +37,7 @@ jobs:
       uses: actions/checkout@v4
       with:
         ref: vNext
-        repository: WASdev/ci.docker
+        repository: wraschke/ci.docker
 
     - name: Run update.sh script
       run: bash ./update.sh ${{ inputs.OLD_VERSION }} ${{ inputs.NEW_VERSION }} ${{ inputs.BUILD_LABEL }}
